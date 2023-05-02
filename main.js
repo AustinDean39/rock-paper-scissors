@@ -81,7 +81,7 @@ function game(maxRounds) {
     let currentRound = 0;
     let playerScore = 0;
     let computerScore = 0;
-    const winningScore = parseInt(maxRounds / 2);
+    const winningScore = parseInt((maxRounds + 1) / 2);
     while (playerScore < winningScore && computerScore < winningScore && currentRound <= maxRounds) {
         currentRound++;
         const playerSelection = getPlayerSelection();
@@ -95,12 +95,12 @@ function game(maxRounds) {
         console.log(`ROUND ${currentRound}: ${roundResult}`);
         console.log(`SCORE:\nPLAYER: ${playerScore}\nCOMPUTER: ${computerScore}`);
     }
+    console.log(`FINAL SCORE:\nPLAYER: ${playerScore}\nCOMPUTER: ${computerScore}`);
     if (playerScore >= winningScore) {
         console.log(`CONGRATULATIONS! YOU WIN!`);
     } else if (computerScore >= winningScore) {
         console.log(`SORRY! YOU LOSE!`);
     } else {
-        console.log(`FINAL SCORE:\nPLAYER: ${playerScore}\nCOMPUTER: ${computerScore}`);
         if (computerScore > playerScore) {
             console.log(`SORRY! YOU LOSE!`);
         } else if (playerScore > computerScore) {
