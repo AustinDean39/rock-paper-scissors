@@ -78,12 +78,11 @@ function playRound(playerSelection, computerSelection) {
 
 // MAIN GAME FUNCTION
 function game(maxRounds) {
-    let currentRound = 0;
+    let currentRound = 1;
     let playerScore = 0;
     let computerScore = 0;
     const winningScore = parseInt((maxRounds + 1) / 2);
     while (playerScore < winningScore && computerScore < winningScore && currentRound <= maxRounds) {
-        currentRound++;
         const playerSelection = getPlayerSelection();
         const computerSelection = getComputerChoice();
         const roundResult = playRound(playerSelection, computerSelection);
@@ -94,6 +93,7 @@ function game(maxRounds) {
         }
         console.log(`ROUND ${currentRound}: ${roundResult}`);
         console.log(`SCORE:\nPLAYER: ${playerScore}\nCOMPUTER: ${computerScore}`);
+        currentRound++;
     }
     console.log(`FINAL SCORE:\nPLAYER: ${playerScore}\nCOMPUTER: ${computerScore}`);
     if (playerScore >= winningScore) {
