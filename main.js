@@ -39,6 +39,7 @@ function playRound(playerSelection, computerSelection) {
                     response = 'You win! ROCK beats SCISSORS!';
                     break;
             }
+            break;
 
         case 'PAPER':
             switch (computerSelection) {
@@ -54,6 +55,7 @@ function playRound(playerSelection, computerSelection) {
                     response = 'You lose! SCISSORS beats PAPER!';
                     break;
             }
+            break;
     
         default: // 'SCISSORS'
             switch (computerSelection) {
