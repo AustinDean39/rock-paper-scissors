@@ -12,7 +12,7 @@ function getComputerChoice() {
 }
 
 // function to ask for the player choice:
-function playerSelection() {
+function getPlayerSelection() {
     let playerSelection = prompt('Please Choose:\nROCK, PAPER, or SCISSORS?\n(if you do not make a choice, one will be randomly selected for you)', 'Please type your selection here').toUpperCase();
     if (playerSelection == 'ROCK' || playerSelection == 'SCISSORS' || playerSelection == 'PAPER') {
         return playerSelection;
@@ -73,3 +73,8 @@ function playRound(playerSelection, computerSelection) {
     }
     return response;
 }
+
+const playerSelection = getPlayerSelection();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(playerSelection, computerSelection));
