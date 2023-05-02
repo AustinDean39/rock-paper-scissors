@@ -96,6 +96,11 @@ function game(maxRounds) {
         currentRound++;
     }
     console.log(`FINAL SCORE:\nPLAYER: ${playerScore}\nCOMPUTER: ${computerScore}`);
+    finalResult(playerScore, computerScore, winningScore);
+    return;
+
+}
+function finalResult(playerScore, computerScore, winningScore) {
     if (playerScore >= winningScore) {
         console.log(`CONGRATULATIONS! YOU WIN!`);
     } else if (computerScore >= winningScore) {
@@ -109,7 +114,6 @@ function game(maxRounds) {
             console.log(`IT'S A TIE! PLAY AGAIN TO TRY TO BEAT THE COMPUTER!`);
         }
     }
-    return;
 }
 
 console.log(game(5));
