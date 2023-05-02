@@ -6,7 +6,7 @@ function getComputerChoice() {
             return 'ROCK';
         case 2:
             return 'PAPER';
-        default:
+        default: // 3
             return 'SCISSORS';
     }
 }
@@ -19,4 +19,57 @@ function playerSelection() {
     } else {
         return getComputerChoice();
     }
+}
+
+// function to play one round of RPS:
+function playRound(playerSelection, computerSelection) {
+    let response = '';
+    switch (playerSelection) {
+        case 'ROCK':
+            switch (computerSelection) {
+                case 'ROCK':
+                    response = 'It\'s a tie! You both chose ROCK.';
+                    break;
+
+                case 'PAPER':
+                    response = 'You lose! PAPER beats ROCK!';
+                    break;
+
+                default: // 'SCISSORS'
+                    response = 'You win! ROCK beats SCISSORS!';
+                    break;
+            }
+
+        case 'PAPER':
+            switch (computerSelection) {
+                case 'ROCK':
+                    response = 'You win! PAPER beats ROCK!';
+                    break;
+
+                case 'PAPER':
+                    response = 'It\'s a tie! You both chose PAPER.';
+                    break;
+            
+                default: // 'SCISSORS'
+                    response = 'You lose! SCISSORS beats PAPER!';
+                    break;
+            }
+    
+        default: // 'SCISSORS'
+            switch (computerSelection) {
+                case 'ROCK':
+                    response = 'You lose! ROCK beats SCISSORS!';
+                    break;
+                
+                case 'PAPER':
+                    response = 'You win! SCISSORS beats PAPER!';
+                    break;
+            
+                default: // 'SCISSORS'
+                    response = 'It\'s a tie! You both chose SCISSORS.';
+                    break;
+            }
+            break;
+    }
+    return response;
 }
