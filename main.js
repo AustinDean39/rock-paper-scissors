@@ -100,6 +100,7 @@ function game(maxRounds) {
     return;
 
 }
+// Function to display the fiinal result of the game based on score:
 function finalResult(playerScore, computerScore, winningScore) {
     if (playerScore >= winningScore) {
         console.log(`CONGRATULATIONS! YOU WIN!`);
