@@ -150,16 +150,45 @@ scissorsButton.addEventListener('click', () => {
 
 // FUNCTION TO UPDATE GAME ROUNDS AND SCORES
 function updateGame(roundResult) {
+    const computerScore = document.getElementById('computer-score');
+    const playerScore = document.getElementById('player-score');
+    
     // UPDATE CURRENT ROUND NUMBER
     currentRound.textContent = parseInt(currentRound.textContent) + 1;
 
     // UPDATE PLAYER OR COMPUTER SCORE
     if (roundResult.textContent.includes('lose')) {
-        const computerScore = document.getElementById('computer-score');
         computerScore.textContent = parseInt(computerScore.textContent) + 1;
     } else if (roundResult.textContent.includes('win')) {
-        const playerScore = document.getElementById('player-score');
         playerScore.textContent = parseInt(playerScore.textContent) + 1;
+    }
+
+    if (playerScore.textContent == '5' || computerScore.textContent == '5') {
+        rockButton.removeEventListener('click', () => {
+            const roundResult = document.createElement('p');
+            roundResult.appendChild(document.createTextNode(`Round ${currentRound.textContent}: ${playRound('ROCK')}`));
+            results.appendChild(roundResult);
+            updateGame(roundResult);
+        });
+        paperButton.addEventListener('click', () => {
+            const roundResult = document.createElement('p');
+            roundResult.appendChild(document.createTextNode(`Round ${currentRound.textContent}: ${playRound('PAPER')}`));
+            results.appendChild(roundResult);
+            updateGame(roundResult);
+        });
+        scissorsButton.addEventListener('click', () => {
+            const roundResult = document.createElement('p');
+            roundResult.appendChild(document.createTextNode(`Round ${currentRound.textContent}: ${playRound('SCISSORS')}`));
+            results.appendChild(roundResult);
+            updateGame(roundResult);
+        });
+        if (playerScore.textContent == '5') {
+            results.appendChild(document.createTextNode('YOU WIN! COMPUTER LOST!'));
+        } else {
+            results.appendChild(document.createTextNode('YOU LOSE! COMPUTER WON!'));
+            
+        }
     }
 }
 
+// FUNCTION TO DECLARE A WINNER AT FIVE POINTS
