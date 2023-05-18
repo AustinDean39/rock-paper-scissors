@@ -77,13 +77,13 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // MAIN GAME FUNCTION
-function game(maxRounds) {
+function game(maxRounds, playerChoice) {
     let currentRound = 1;
     let playerScore = 0;
     let computerScore = 0;
     const winningScore = parseInt((maxRounds + 1) / 2);
     while (playerScore < winningScore && computerScore < winningScore && currentRound <= maxRounds) {
-        const playerSelection = getPlayerSelection();
+        const playerSelection = playerChoice;
         const computerSelection = getComputerChoice();
         const roundResult = playRound(playerSelection, computerSelection);
         if (roundResult.includes('lose')) {
