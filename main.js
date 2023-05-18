@@ -22,8 +22,9 @@ function getPlayerSelection() {
 }
 
 // function to play one round of RPS:
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
     let response = '';
+    let computerSelection = getComputerChoice();
     switch (playerSelection) {
         case 'ROCK':
             switch (computerSelection) {
@@ -116,3 +117,19 @@ function finalResult(playerScore, computerScore, winningScore) {
         }
     }
 }
+
+// LINK TO BUTTONS IN DOM
+const rockButton = document.getElementById('btn-rock');
+const paperButton = document.getElementById('btn-paper');
+const scissorsButton = document.getElementById('btn-scissors');
+
+// EVENT LISTENERS FOR BUTTONS
+rockButton.addEventListener('click', () => {
+    console.log(playRound('ROCK'));
+});
+paperButton.addEventListener('click', () => {
+    console.log(playRound('PAPER'));
+});
+scissorsButton.addEventListener('click', () => {
+    console.log(playRound('SCISSORS'));
+});
