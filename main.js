@@ -118,18 +118,26 @@ function finalResult(playerScore, computerScore, winningScore) {
     }
 }
 
-// LINK TO BUTTONS IN DOM
+// LINK TO ELEMENTS IN DOM
 const rockButton = document.getElementById('btn-rock');
 const paperButton = document.getElementById('btn-paper');
 const scissorsButton = document.getElementById('btn-scissors');
 
+const results = document.getElementById('results');
+
 // EVENT LISTENERS FOR BUTTONS
 rockButton.addEventListener('click', () => {
-    console.log(playRound('ROCK'));
+    const roundResult = document.createElement('p');
+    roundResult.appendChild(document.createTextNode(`${playRound('ROCK')}`));
+    results.appendChild(roundResult);
 });
 paperButton.addEventListener('click', () => {
-    console.log(playRound('PAPER'));
+    const roundResult = document.createElement('p');
+    roundResult.appendChild(document.createTextNode(`${playRound('PAPER')}`));
+    results.appendChild(roundResult);
 });
 scissorsButton.addEventListener('click', () => {
-    console.log(playRound('SCISSORS'));
+    const roundResult = document.createElement('p');
+    roundResult.appendChild(document.createTextNode(`${playRound('SCISSORS')}`));
+    results.appendChild(roundResult);
 });
