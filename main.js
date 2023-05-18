@@ -116,5 +116,3 @@ function finalResult(playerScore, computerScore, winningScore) {
         }
     }
 }
-
-console.log(game(5));
