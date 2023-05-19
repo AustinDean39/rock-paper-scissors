@@ -38,15 +38,27 @@ const results = document.getElementById('results');
 const currentRound = document.getElementById('current-round');
 
 // EVENT LISTENERS FOR BUTTONS
-rockButton.addEventListener('click', () => {
+rockButton.addEventListener('click', playRockRound);
+rockButton.addEventListener('click', gameWon);
+
+paperButton.addEventListener('click', playPaperRound);
+paperButton.addEventListener('click', gameWon);
+
+scissorsButton.addEventListener('click', playScissorsRound);
+scissorsButton.addEventListener('click', gameWon);
+
+// CONTAINED FUNCTIONS FOR THE BUTTONS
+function playRockRound() {
     displayRoundResults(playRoundv2('ROCK'));
-});
-paperButton.addEventListener('click', () => {
+}
+
+function playPaperRound() {
     displayRoundResults(playRoundv2('PAPER'));
-});
-scissorsButton.addEventListener('click', () => {
+}
+
+function playScissorsRound() {
     displayRoundResults(playRoundv2('SCISSORS'));
-});
+}
 
 // REFACTORED ROUND FUNCTION (TO PLAY ONE ROUND)
 function playRoundv2(playerChoice) {
@@ -129,12 +141,46 @@ function displayRoundResults(roundResult) {
         results.appendChild(thisRoundResult);
     }
 
-    // INSERT FUNCTION THAT DETERMINES IF THERE'S A WINNER
-    
-    
     // INCREMENT THE ROUND NUMBER AND DISPLAY IT
     thisRound++;
     currentRound.textContent = thisRound;
+    
+    return;
+}
+
+// FUNCTION THAT DETERMINES IF THERE'S A WINNER
+function gameWon() {
+    let computerScore = parseInt(document.getElementById('computer-score').textContent);
+    let playerScore = parseInt(document.getElementById('player-score').textContent);
+    
+    const winnerPara = document.createElement('p');
+
+    if (playerScore === 5) {
+        winnerPara.textContent = 'Congratulations! You won!';
+        results.appendChild(winnerPara);
+        
+        rockButton.removeEventListener('click', playRockRound);
+        rockButton.removeEventListener('click', gameWon)
+        
+        paperButton.removeEventListener('click', playPaperRound);
+        paperButton.removeEventListener('click', gameWon)
+
+        scissorsButton.removeEventListener('click', playScissorsRound);
+        scissorsButton.removeEventListener('click', gameWon)
+    } else if (computerScore === 5) {
+        winnerPara.textContent = 'Sorry! You lost!';
+        results.appendChild(winnerPara);
+        
+        rockButton.removeEventListener('click', playRockRound);
+        rockButton.removeEventListener('click', gameWon)
+        
+        paperButton.removeEventListener('click', playPaperRound);
+        paperButton.removeEventListener('click', gameWon)
+
+        scissorsButton.removeEventListener('click', playScissorsRound);
+        scissorsButton.removeEventListener('click', gameWon)
+    }
 
     return;
+
 }
