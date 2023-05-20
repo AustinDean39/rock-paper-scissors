@@ -27,11 +27,13 @@ body {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
 .main-content {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .main {
   align-items: center;
   background-color: hsl(275, 100%, 50%);
@@ -59,4 +61,3 @@ body {
   padding: 23px;
   width: fit-content;
 }
-
