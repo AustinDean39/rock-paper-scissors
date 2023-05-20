@@ -5,28 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Rock, Paper, Scissors</title>
 </head>
 
 <body>
-    <h1>Let's Play Rock, Paper, Scissors</h1>
-
-    <h2>First one to five points wins!</h2>
-
-    <div>
-        <h3>Round <span id="current-round">1</span></h3>
-        <h4>Choose your weapon:</h4>
-        <button id="btn-rock">Rock</button>
-        <button id="btn-paper">Paper</button>
-        <button id="btn-scissors">Scissors</button>
-    </div>
-
-    <div id="results">
-        <div class="scores">
-            <p>Player Score: <span id="player-score">0</span></p>
-            <p>Computer Score: <span id="computer-score">0</span></p>
+    <div class="main">
+        <div class="header">
+            <h1>Let's Play Rock, Paper, Scissors</h1>
+            <h2>First one to five points wins!</h2>
         </div>
-        
+    
+        <div class="main-content">
+            <h3>Round <span id="current-round">1</span></h3>
+            <h4>Choose your weapon:</h4>
+            <div class="button-group">
+                <button id="btn-rock" class="button">Rock</button>
+                <button id="btn-paper" class="button">Paper</button>
+                <button id="btn-scissors" class="button">Scissors</button>
+            </div>
+        </div>
+    
+        <div id="results" class="results">
+            <div class="scores">
+                <p>Player Score: <span id="player-score">0</span></p>
+                <p>Computer Score: <span id="computer-score">0</span></p>
+            </div>
+            
+        </div>
     </div>
 
     <script src="./main.js"></script>
