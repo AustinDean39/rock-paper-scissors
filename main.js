@@ -1,4 +1,4 @@
-// function to randomly return either 'ROCK', 'PAPER', or 'SCISSORS' to be used as the computer's choice
+// FUNCTION TO RANDOMLY RETURN EITHER 'ROCK', 'PAPER', OR 'SCISSORS' TO BE USED AS THE COMPUTER'S CHOICE
 function getComputerChoice() {
     const choice = parseInt((Math.random() * 3) + 1);
     switch (choice) {
@@ -10,23 +10,6 @@ function getComputerChoice() {
             return 'SCISSORS';
     }
 }
-
-// Function to display the fiinal result of the game based on score:
-/* function finalResult(playerScore, computerScore, winningScore) {
-    if (playerScore >= winningScore) {
-        console.log(`CONGRATULATIONS! YOU WIN!`);
-    } else if (computerScore >= winningScore) {
-        console.log(`SORRY! YOU LOSE!`);
-    } else {
-        if (computerScore > playerScore) {
-            console.log(`SORRY! YOU LOSE!`);
-        } else if (playerScore > computerScore) {
-            console.log(`CONGRATULATIONS! YOU WIN!`);
-        } else {
-            console.log(`IT'S A TIE! PLAY AGAIN TO TRY TO BEAT THE COMPUTER!`);
-        }
-    }
-} */
 
 // LINK TO ELEMENTS IN DOM
 const rockButton = document.getElementById('btn-rock');
@@ -144,7 +127,7 @@ function displayRoundResults(roundResult) {
     // INCREMENT THE ROUND NUMBER AND DISPLAY IT
     thisRound++;
     currentRound.textContent = thisRound;
-    
+
     return;
 }
 
@@ -152,16 +135,16 @@ function displayRoundResults(roundResult) {
 function gameWon() {
     let computerScore = parseInt(document.getElementById('computer-score').textContent);
     let playerScore = parseInt(document.getElementById('player-score').textContent);
-    
+
     const winnerPara = document.createElement('p');
 
     if (playerScore === 5) {
         winnerPara.textContent = 'Congratulations! You won!';
         results.appendChild(winnerPara);
-        
+
         rockButton.removeEventListener('click', playRockRound);
         rockButton.removeEventListener('click', gameWon)
-        
+
         paperButton.removeEventListener('click', playPaperRound);
         paperButton.removeEventListener('click', gameWon)
 
@@ -170,10 +153,10 @@ function gameWon() {
     } else if (computerScore === 5) {
         winnerPara.textContent = 'Sorry! You lost!';
         results.appendChild(winnerPara);
-        
+
         rockButton.removeEventListener('click', playRockRound);
         rockButton.removeEventListener('click', gameWon)
-        
+
         paperButton.removeEventListener('click', playPaperRound);
         paperButton.removeEventListener('click', gameWon)
 
