@@ -60,6 +60,7 @@ body {
   /* other settings */
   background-color: white;
   border-radius: 50px;
+  box-shadow: 1px 1px 10px black;
   padding: 25px;
 }
 
