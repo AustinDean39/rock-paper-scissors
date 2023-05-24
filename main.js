@@ -29,7 +29,7 @@ const currentRound = document.getElementById('current-round');
 mainEntry.addEventListener('click', () => {
     mainEntry.classList.add('hidden');
     mainContent.classList.remove('hidden');
-  });
+});
 
 // EVENT LISTENERS FOR BUTTONS
 rockButton.addEventListener('click', playRockRound);
@@ -61,6 +61,9 @@ function playScissorsRound() {
 function playRoundv2(playerChoice) {
     const computerChoice = getComputerChoice();
     playerChoice = playerChoice.toUpperCase();
+
+    // UPDATE THE COMPUTER IMAGE WITH CURRENT CHOICE
+    changeComputerImage(computerChoice);
 
     // CREATE AN OBJECT FOR THE ROUND RESULTS THAT INCLUDES EACH CHOICE, WHETHER THE PLAYER WON, OR IF IT'S A TIE
     const roundResult = {
@@ -199,5 +202,25 @@ function changePlayerImage(imageNeeded) {
             playerImage.setAttribute('src', './img/img-player/player-face.png');
             break;
     }
+
     return;
+}
+
+// FUNCTION TO CHANGE COMPUTER IMAGE
+function changeComputerImage(imageNeeded) {
+    const computerImage = document.getElementById('computer-image');
+    switch (imageNeeded) {
+        case 'ROCK':
+            computerImage.setAttribute('src', './img/img-computer/comp-rock.png');
+            break;
+        case 'PAPER':
+            computerImage.setAttribute('src', './img/img-computer/comp-paper.png');
+            break;
+        case 'SCISSORS':
+            computerImage.setAttribute('src', './img/img-computer/comp-scissors.png');
+            break;
+        default:
+            computerImage.setAttribute('src', './img/img-computer/comp-face.png');
+            break;
+    }
 }
