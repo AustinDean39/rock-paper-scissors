@@ -43,14 +43,17 @@ scissorsButton.addEventListener('click', gameWon);
 
 // CONTAINED FUNCTIONS FOR THE BUTTONS
 function playRockRound() {
+    changePlayerImage('ROCK');
     displayRoundResults(playRoundv2('ROCK'));
 }
 
 function playPaperRound() {
+    changePlayerImage('PAPER');
     displayRoundResults(playRoundv2('PAPER'));
 }
 
 function playScissorsRound() {
+    changePlayerImage('SCISSORS');
     displayRoundResults(playRoundv2('SCISSORS'));
 }
 
@@ -177,4 +180,24 @@ function gameWon() {
 
     return;
 
+}
+
+// FUNCTION TO CHANGE PLAYER IMAGE
+function changePlayerImage(imageNeeded) {
+    const playerImage = document.getElementById('player-image');
+    switch (imageNeeded) {
+        case 'ROCK':
+            playerImage.setAttribute('src', './img/img-player/player-rock.png');
+            break;
+        case 'PAPER':
+            playerImage.setAttribute('src', './img/img-player/player-paper.png');
+            break;
+        case 'SCISSORS':
+            playerImage.setAttribute('src', './img/img-player/player-scissors.png');
+            break;
+        default:
+            playerImage.setAttribute('src', './img/img-player/player-face.png');
+            break;
+    }
+    return;
 }
