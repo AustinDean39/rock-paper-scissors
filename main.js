@@ -158,27 +158,11 @@ function gameWon() {
     if (playerScore === 5) {
         winnerPara.textContent = 'Congratulations! You won!';
         results.appendChild(winnerPara);
-
-        rockButton.removeEventListener('click', playRockRound);
-        rockButton.removeEventListener('click', gameWon)
-
-        paperButton.removeEventListener('click', playPaperRound);
-        paperButton.removeEventListener('click', gameWon)
-
-        scissorsButton.removeEventListener('click', playScissorsRound);
-        scissorsButton.removeEventListener('click', gameWon)
+        displayEndScreen('WIN');
     } else if (computerScore === 5) {
         winnerPara.textContent = 'Sorry! You lost!';
         results.appendChild(winnerPara);
-
-        rockButton.removeEventListener('click', playRockRound);
-        rockButton.removeEventListener('click', gameWon)
-
-        paperButton.removeEventListener('click', playPaperRound);
-        paperButton.removeEventListener('click', gameWon)
-
-        scissorsButton.removeEventListener('click', playScissorsRound);
-        scissorsButton.removeEventListener('click', gameWon)
+        displayEndScreen('LOSE');
     }
 
     return;
@@ -223,4 +207,26 @@ function changeComputerImage(imageNeeded) {
             computerImage.setAttribute('src', './img/img-computer/comp-face.png');
             break;
     }
+}
+
+// FUNCTION TO DISPLAY WINNER/LOSER SCREEN
+function displayEndScreen(result) {
+    const computerImage = document.getElementById('computer-image');
+    const playerImage = document.getElementById('player-image');
+    const winnerScreen = document.getElementById('winner-screen');
+    const loserScreen = document.getElementById('loser-screen');
+
+    // HIDE ALL OTHER SECTIONS/ASSETS
+    computerImage.classList.add('hidden');
+    playerImage.classList.add('hidden');
+    mainContent.classList.add('hidden');
+
+    // DISPLAY CORRECT END SCREEN
+    if (result === 'WIN') {
+        winnerScreen.classList.remove('hidden');
+    } else {
+        loserScreen.classList.remove('hidden');
+    }
+
+    return;
 }
