@@ -98,10 +98,10 @@ body {
   align-items: stretch;
 }
 
-.game-log {
+#game-log {
   /* flexbox settings */
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: space-around;
   align-items: center;
 
