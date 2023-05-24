@@ -36,6 +36,20 @@ body {
   transform: translateY(4px);
 }
 
+.header {
+  /* flexbox settings */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* other settings */
+  color: whitesmoke;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 1px darkviolet;
+}
+
 .main-card {
   /* flexbox settings */
   display: flex;
@@ -47,19 +61,6 @@ body {
   background-color: white;
   border-radius: 50px;
   padding: 25px;
-}
-
-.header {
-  /* flexbox settings */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  /* other settings */
-  color: whitesmoke;
-  padding: 10px;
-  text-shadow: 1px 1px 1px darkviolet;
 }
 
 .scoreboard {
