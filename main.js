@@ -16,7 +16,7 @@ const rockButton = document.getElementById('btn-rock');
 const paperButton = document.getElementById('btn-paper');
 const scissorsButton = document.getElementById('btn-scissors');
 
-const results = document.getElementById('results');
+const results = document.getElementById('game-log');
 
 const currentRound = document.getElementById('current-round');
 
@@ -93,14 +93,14 @@ function playRoundv2(playerChoice) {
 // FUNCTION TO DISPLAY ROUND RESULTS TO THE USER
 function displayRoundResults(roundResult) {
     // GRAB DOM ELEMENTS
-    let computerScore = parseInt(document.getElementById('computer-score').textContent);
-    let playerScore = parseInt(document.getElementById('player-score').textContent);
+    let computerScore = parseInt(document.getElementById('computer-score-num').textContent);
+    let playerScore = parseInt(document.getElementById('player-score-num').textContent);
     let thisRound = parseInt(currentRound.textContent);
 
     // DISPLAY THE CORRECT WINNER, OR DECLARE A TIE
     if (roundResult.playerWon === true) {
         playerScore++;
-        document.getElementById('player-score').textContent = playerScore;
+        document.getElementById('player-score-num').textContent = playerScore;
 
         const thisRoundResult = document.createElement('p');
         const resultText = document.createTextNode(`Round ${thisRound}: YOU WIN! ${roundResult.playerSelection} beats ${roundResult.computerSelection}.`);
@@ -109,7 +109,7 @@ function displayRoundResults(roundResult) {
         results.appendChild(thisRoundResult);
     } else if (roundResult.tie === false) {
         computerScore++;
-        document.getElementById('computer-score').textContent = computerScore;
+        document.getElementById('computer-score-num').textContent = computerScore;
 
         const thisRoundResult = document.createElement('p');
         const resultText = document.createTextNode(`Round ${thisRound}: YOU LOSE! ${roundResult.computerSelection} beats ${roundResult.playerSelection}.`);
@@ -133,8 +133,8 @@ function displayRoundResults(roundResult) {
 
 // FUNCTION THAT DETERMINES IF THERE'S A WINNER
 function gameWon() {
-    let computerScore = parseInt(document.getElementById('computer-score').textContent);
-    let playerScore = parseInt(document.getElementById('player-score').textContent);
+    let computerScore = parseInt(document.getElementById('computer-score-num').textContent);
+    let playerScore = parseInt(document.getElementById('player-score-num').textContent);
 
     const winnerPara = document.createElement('p');
 
