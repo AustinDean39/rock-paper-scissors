@@ -11,14 +11,25 @@ function getComputerChoice() {
     }
 }
 
-// LINK TO ELEMENTS IN DOM
+// LINK TO ELEMENTS IN DOM:
+// LINKS TO SECTIONS
+const results = document.getElementById('game-log');
+const mainEntry = document.getElementById('start-game');
+const mainContent = document.getElementById('main-content');
+
+// BUTTONS
 const rockButton = document.getElementById('btn-rock');
 const paperButton = document.getElementById('btn-paper');
 const scissorsButton = document.getElementById('btn-scissors');
 
-const results = document.getElementById('game-log');
-
+// CURRENT ROUND DISPLAY
 const currentRound = document.getElementById('current-round');
+
+// EVENT LISTENER TO START GAME
+mainEntry.addEventListener('click', () => {
+    mainEntry.classList.add('hidden');
+    mainContent.classList.remove('hidden');
+  });
 
 // EVENT LISTENERS FOR BUTTONS
 rockButton.addEventListener('click', playRockRound);
