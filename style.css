@@ -1,71 +1,123 @@
 body {
-  font-family: sans-serif;
-  text-align: center;
+  /* flexbox settings */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  height: 99vh;
+  background-color: darkviolet;
+  font-family: 'Righteous', cursive;
 }
 
-.button {
-  background-color: #27b727;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px rgb(31, 52, 0);
-  color: #fff;
-  cursor: pointer;
+/* General Button Styling */
+.btn {
   display: inline-block;
-  font-size: 24px;
-  outline: none;
   padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
-.button:hover {
-  background-color: #3e8e41;
+.btn:hover {
+  background-color: #3e8e41
 }
 
-.button:active {
+.btn:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-.header {
-  background-color: hsl(125, 50%, 50%);
-  border-radius: 25px;
-  box-shadow: 0 10px 20px rgb(31, 52, 0);
-  color: #fff;
-  padding: 23px;
-  width: 90%;
-}
-
-.main {
-  align-items: center;
-  background-color: hsl(275, 100%, 50%);
-  border-radius: 25px;
+.main-card {
+  /* flexbox settings */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  height: 50vh;
-  max-width: 100vw;
-  height: min-content;
+  justify-content: space-evenly;
+  align-items: stretch;
+
+  /* other settings */
+  background-color: white;
+  border-radius: 50px;
+  padding: 25px;
+}
+
+.header {
+  /* flexbox settings */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* other settings */
+  color: whitesmoke;
+  padding: 10px;
+  text-shadow: 1px 1px 1px darkviolet;
+}
+
+.scoreboard {
+  /* flexbox settings */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  /* other settings */
   padding: 10px;
 }
 
-.main-content {
-  color: #fff;
-  text-shadow: 1px 1px 10px black;
+.game-display {
+  /* flexbox settings */
   display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* other settings */
+  padding: 10px;
 }
 
-#results {
-  background-color: rgba(0, 0, 0, 0.15);
-  border-radius: 46px;
-  color: white;
-  font-size: 24px;
-  margin-top: 10px;
-  padding: 23px;
-  width: 80%;
+#start-game {
+  height: 10vh;
+  padding: 10px;
+  width: 50vh;
+}
+
+.main-content {
+  /* flexbox settings */
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.game-log {
+  /* flexbox settings */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  /* other settings */
+  padding: 10px;
+}
+
+.footer {
+  background-color: darkviolet;
+  justify-self: flex-end;
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Class for hidden objects */
+
+.hidden {
+  display: none;
 }
