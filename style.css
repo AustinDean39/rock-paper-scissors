@@ -78,12 +78,29 @@ body {
 .game-display {
   /* flexbox settings */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   /* other settings */
   padding: 10px;
+}
+
+img {
+  max-height: 25vh;
+  max-width: 25vw;
+}
+
+.img-display {
+  /* flexbox settings */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  /* other settings */
+  /* border: 2px solid; */
+  width: 100%;
 }
 
 #start-game {
