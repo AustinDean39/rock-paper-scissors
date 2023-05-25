@@ -16,6 +16,7 @@ function getComputerChoice() {
 const results = document.getElementById('game-log');
 const mainEntry = document.getElementById('start-game');
 const mainContent = document.getElementById('main-content');
+const gameDisplay = document.getElementById('game-display');
 const playAgainBtn01 = document.getElementById('play-again-btn-01');
 const playAgainBtn02 = document.getElementById('play-again-btn-02');
 
@@ -217,14 +218,11 @@ function changeComputerImage(imageNeeded) {
 
 // FUNCTION TO DISPLAY WINNER/LOSER SCREEN
 function displayEndScreen(result) {
-    const computerImage = document.getElementById('computer-image');
-    const playerImage = document.getElementById('player-image');
     const winnerScreen = document.getElementById('winner-screen');
     const loserScreen = document.getElementById('loser-screen');
 
     // HIDE ALL OTHER SECTIONS/ASSETS
-    computerImage.classList.add('hidden');
-    playerImage.classList.add('hidden');
+    gameDisplay.classList.add('hidden');
     mainContent.classList.add('hidden');
 
     // DISPLAY CORRECT END SCREEN
@@ -240,16 +238,13 @@ function displayEndScreen(result) {
 // FUNCTION TO RESET THE GAME ON 'PLAY AGAIN'
 function resetGame() {
     // GRAB ALL NECESSARY ELEMENTS
-    const computerImage = document.getElementById('computer-image');
-    const playerImage = document.getElementById('player-image');
     const winnerScreen = document.getElementById('winner-screen');
     const loserScreen = document.getElementById('loser-screen');
     const playerScore = document.getElementById('player-score-num');
     const computerScore = document.getElementById('computer-score-num');
 
     // UNHIDE THE CORRECT ELEMENTS
-    computerImage.classList.remove('hidden');
-    playerImage.classList.remove('hidden');
+    gameDisplay.classList.remove('hidden');
     mainContent.classList.remove('hidden');
 
     // RESET THE IMAGES
