@@ -16,6 +16,8 @@ function getComputerChoice() {
 const results = document.getElementById('game-log');
 const mainEntry = document.getElementById('start-game');
 const mainContent = document.getElementById('main-content');
+const playAgainBtn01 = document.getElementById('play-again-btn-01');
+const playAgainBtn02 = document.getElementById('play-again-btn-02');
 
 // BUTTONS
 const rockButton = document.getElementById('btn-rock');
@@ -25,13 +27,17 @@ const scissorsButton = document.getElementById('btn-scissors');
 // CURRENT ROUND DISPLAY
 const currentRound = document.getElementById('current-round');
 
-// EVENT LISTENER TO START GAME
+// EVENT LISTENER FOR 'START GAME' BUTTON
 mainEntry.addEventListener('click', () => {
     mainEntry.classList.add('hidden');
     mainContent.classList.remove('hidden');
 });
 
-// EVENT LISTENERS FOR BUTTONS
+// EVENT LISTENER FOR 'PLAY AGAIN' BUTTON
+playAgainBtn01.addEventListener('click', resetGame);
+playAgainBtn02.addEventListener('click', resetGame);
+
+// EVENT LISTENERS FOR GAME BUTTONS
 rockButton.addEventListener('click', playRockRound);
 rockButton.addEventListener('click', gameWon);
 
@@ -227,6 +233,42 @@ function displayEndScreen(result) {
     } else {
         loserScreen.classList.remove('hidden');
     }
+
+    return;
+}
+
+// FUNCTION TO RESET THE GAME ON 'PLAY AGAIN'
+function resetGame() {
+    // GRAB ALL NECESSARY ELEMENTS
+    const computerImage = document.getElementById('computer-image');
+    const playerImage = document.getElementById('player-image');
+    const winnerScreen = document.getElementById('winner-screen');
+    const loserScreen = document.getElementById('loser-screen');
+    const playerScore = document.getElementById('player-score-num');
+    const computerScore = document.getElementById('computer-score-num');
+
+    // UNHIDE THE CORRECT ELEMENTS
+    computerImage.classList.remove('hidden');
+    playerImage.classList.remove('hidden');
+    mainContent.classList.remove('hidden');
+
+    // RESET THE IMAGES
+    changeComputerImage('FACE');
+    changePlayerImage('FACE');
+
+    // HIDE THE REST
+    winnerScreen.classList.add('hidden');
+    loserScreen.classList.add('hidden');
+
+    // RESET THE GAME LOG
+    results.innerHTML = '';
+
+    // RESET ROUND
+    currentRound.textContent = '1';
+
+    // RESET PLAYER + COMPUTER SCORES
+    playerScore.textContent = '0';
+    computerScore.textContent = '0';
 
     return;
 }
