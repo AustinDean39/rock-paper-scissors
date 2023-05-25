@@ -75,6 +75,10 @@ body {
   padding: 10px;
 }
 
+.score-text {
+  font-size: 200%;
+}
+
 .game-display {
   /* flexbox settings */
   display: flex;
