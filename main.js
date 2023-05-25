@@ -17,13 +17,13 @@ const results = document.getElementById('game-log');
 const mainEntry = document.getElementById('start-game');
 const mainContent = document.getElementById('main-content');
 const imageDisplay = document.getElementById('img-display');
-const playAgainBtn01 = document.getElementById('play-again-btn-01');
-const playAgainBtn02 = document.getElementById('play-again-btn-02');
 
 // BUTTONS
 const rockButton = document.getElementById('btn-rock');
 const paperButton = document.getElementById('btn-paper');
 const scissorsButton = document.getElementById('btn-scissors');
+const playAgainBtn01 = document.getElementById('play-again-btn-01');
+const playAgainBtn02 = document.getElementById('play-again-btn-02');
 
 // CURRENT ROUND DISPLAY
 const currentRound = document.getElementById('current-round');
@@ -242,14 +242,14 @@ function resetGame() {
     const loserScreen = document.getElementById('loser-screen');
     const playerScore = document.getElementById('player-score-num');
     const computerScore = document.getElementById('computer-score-num');
+    
+    // RESET THE IMAGES
+    changeComputerImage('FACE');
+    changePlayerImage('FACE');
 
     // UNHIDE THE CORRECT ELEMENTS
     imageDisplay.classList.remove('hidden');
     mainContent.classList.remove('hidden');
-
-    // RESET THE IMAGES
-    changeComputerImage('FACE');
-    changePlayerImage('FACE');
 
     // HIDE THE REST
     winnerScreen.classList.add('hidden');
